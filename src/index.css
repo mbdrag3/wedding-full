@@ -1,0 +1,67 @@
+/* General Styles */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reset margins and paddings */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; /* prevents horizontal scroll on mobile */
+
+}
+
+/* Global box-sizing */
+* {
+  box-sizing: inherit;
+}
+
+/* Flex layout for footer placement */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+  padding-top: 5rem; /* for navbar */
+}
+
+/* Main container setup */
+#root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Expands content to push footer down */
+}
+
+/* Link styles */
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+/* Footer styles */
+.footer {
+  margin-top: auto; /* Push footer to the bottom */
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+body {
+  padding-top: 5rem; /* Adjust based on the height of your navbar */
+}
+

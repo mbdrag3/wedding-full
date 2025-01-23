@@ -1,0 +1,67 @@
+@font-face {
+    font-family: 'Tomatoes';
+    src: url('../assets/fonts/Tomatoes-O8L8.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .navbar-toggler {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: block !important; /* Always display the button */
+  }
+  
+  .navbar-nav {
+    display: none; /* Hidden by default */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+  }
+  
+  .navbar-nav.show {
+    display: flex;
+  }
+  
+  .navbar-nav .nav-link {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    background-color: #555;
+  }
+
+  .navbar-text {
+    font-family: 'Tomatoes', sans-serif; /* Fallback to sans-serif */
+    font-size: 1.5rem; /* Adjust size as needed */
+    font-weight: normal;
+    color: #fff; /* Ensure the text is visible against the navbar */
+  }
+
+  @media screen and (max-width: 768px) {
+    .navbar-text {
+      font-size: .9rem;
+    }
+  }
+  
+  
+  
