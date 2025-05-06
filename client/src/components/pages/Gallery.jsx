@@ -13,7 +13,7 @@ import IMG1  from '../../assets/optimized-gallery/DSC_123.jpg';
 import IMG2  from '../../assets/optimized-gallery/DSC_1234.jpg';
 import IMG3  from '../../assets/optimized-gallery/DSC_12345.jpg';
 import IMG4  from '../../assets/optimized-gallery/DSC_123456.jpg';
-import IMG5  from '../../assets/optimized-gallery/DSC_7541.jpg';
+import IMG5  from '../../assets/optimized-gallery/DSC_7541.JPG';
 import IMG6  from '../../assets/optimized-gallery/IMG_0250.jpg';
 import IMG7  from '../../assets/optimized-gallery/IMG_0384.jpg';
 import IMG8  from '../../assets/optimized-gallery/IMG_0486.jpg';
