@@ -1,0 +1,16 @@
+.footer {
+  position: relative; /* Normal flow instead of fixed */
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Ensure it spans the full width */
+  background-color: black;
+  color: #e4d96f;
+  text-align: center;
+  padding: 10px 0; /* Vertical padding */
+}
+
+.footer-content {
+  max-width: 1200px; /* Limit the max-width to match the content width */
+  margin: 0 auto; /* Center-align the content */
+  padding: 0 20px; /* Add optional side padding for consistency */
+}

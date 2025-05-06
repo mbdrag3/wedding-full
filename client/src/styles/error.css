@@ -1,0 +1,15 @@
+.error-page-container {
+    text-align: center;
+    padding: 50px;
+    font-family: Arial, sans-serif;
+}
+
+.error-page-container h1 {
+    font-size: 2.5rem;
+    color: #ff4040;
+}
+
+.error-page-container p {
+    font-size: 1.2rem;
+    color: #555;
+}

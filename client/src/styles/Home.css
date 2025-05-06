@@ -1,0 +1,62 @@
+/* Reset some possible default margins/padding on html/body */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* Helps on iOS Safari */
+  font-family:'Times New Roman', Times, serif;
+}
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden; 
+  position: relative;
+  padding: 10px 0;
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: inline-flex;
+  animation: scroll-marquee 40s linear infinite;
+}
+
+.marquee-image {
+  max-width: 500px;    /* Let images shrink proportionally */
+  height: auto;       /* remove the forced fixed height */
+  flex-shrink: 0;     /* keep them from shrinking narrower than their intrinsic aspect ratio */
+  margin-right: 20px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Center the flower divider and prevent it from getting too big */
+.divider-container {
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  margin: 20px 0; /* Optional: space above and below the divider */
+}
+
+.flower-divider {
+  max-width: 500px; /* Limit the width of the divider */
+  width: 100%; /* Make it responsive */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
+@keyframes scroll-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* MEDIA QUERY FOR SMALLER SCREENS */
+@media screen and (max-width: 768px) {
+  .marquee-image {
+    max-width: 250px; /* or maybe 80% if you want them fluid */
+    height: auto;
+    margin-right: 10px;
+  }
+}

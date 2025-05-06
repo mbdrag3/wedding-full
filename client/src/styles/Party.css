@@ -1,0 +1,271 @@
+.wedding-party-div {
+  font-family: 'Parisienne', cursive;
+  padding: 20px; /* Add padding to prevent content from touching screen edges */
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.wedding-party-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.groom-side,
+.bride-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content in columns */
+}
+
+.groom-side {
+  margin-right: 0.5rem;
+}
+
+.bride-side {
+  margin-left: 0.5rem;
+}
+
+.person {
+  margin-bottom: 1rem;
+  perspective: 1000px; /* Necessary for the flip effect */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center person cards */
+}
+
+/* Flip Card Container */
+.flip-card {
+  width: 180px; /* Slightly reduced from 200px */
+  height: 315px; /* Proportionally reduced from 350px */
+  margin: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Card inner container (handles the flipping) */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d; /* Enable 3D space */
+  transition: transform 0.6s;
+}
+
+/* Front side of the flip card (image) */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  backface-visibility: hidden; /* Hide the back when flipped */
+}
+
+/* Front side (image) */
+.flip-card-front {
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card-front img {
+  width: 180px; /* Match container width */
+  height: 315px; /* Match container height */
+  object-fit: cover;
+  border-radius: 50%;
+  filter: grayscale(100%);
+}
+
+/* Back side of the flip card (description) */
+.flip-card-back {
+  color: black;
+  transform: rotateY(180deg); /* Initially hidden */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centers content vertically and horizontally */
+  text-align: center;
+}
+
+.flip-card-back-img {
+  width: 180px; /* Match container width */
+  height: 315px; /* Match container height */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1; /* Ensure that the image stays behind the description */
+}
+
+.flip-card-back img {
+  width: 180px; /* Match container width */
+  height: 315px; /* Match container height */
+  object-fit: cover;
+  border-radius: 50%;
+  filter: grayscale(100%);
+  opacity: 0.3; /* Image opacity to blend with text */
+}
+
+/* Center the description text */
+.flip-card-description {
+  position: absolute;
+  top: 50%; /* Vertically center */
+  left: 50%; /* Horizontally center */
+  transform: translate(-50%, -50%); /* Adjust to truly center */
+  color: black; /* White text for readability */
+  font-size: 1rem; /* Slightly smaller font */
+  padding: 10px;
+  max-width: 90%; /* To avoid text overflowing */
+  word-wrap: break-word; /* Ensure long words are broken to avoid overflow */
+}
+
+/* Hover effect for flip */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg); /* Flip the card on hover */
+}
+
+/* For touch devices */
+@media (hover: none) {
+  .flip-card:active .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+/* Static Name and Role */
+.person h5, .person h3 {
+  text-align: center;
+  margin: 8px 0;
+  width: 100%; /* Ensure text stays within container */
+}
+
+.person h5 {
+  font-size: 1rem;
+}
+
+.person h3 {
+  font-size: 1.2rem;
+}
+
+/* Flower Girls container */
+.flower-girls-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.bold {
+  font-weight: 900 !important;
+  text-decoration: underline;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem; /* Smaller title on mobile */
+  }
+  
+  .wedding-party-container {
+    /* Keep side by side layout */
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .groom-side,
+  .bride-side {
+    /* Keep side by side but make smaller */
+    margin: 0 4px; /* Minimal margin between columns */
+    padding: 0 2px;
+    flex: 1;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem; /* Smaller headings */
+  }
+  
+  .flip-card {
+    width: 130px; /* Significantly smaller on mobile */
+    height: 230px;
+    margin: 5px;
+  }
+  
+  .flip-card-front img,
+  .flip-card-back-img,
+  .flip-card-back img {
+    width: 130px;
+    height: 230px;
+  }
+  
+  .person h5 {
+    font-size: 0.8rem;
+    margin: 4px 0;
+  }
+  
+  .person h3 {
+    font-size: 1rem;
+    margin: 4px 0;
+  }
+  
+  .flip-card-description {
+    font-size: 0.8rem;
+    padding: 5px;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 360px) {
+  .flip-card {
+    width: 100px; /* Even smaller for very small screens */
+    height: 175px;
+  }
+  
+  .flip-card-front img,
+  .flip-card-back-img, 
+  .flip-card-back img {
+    width: 100px;
+    height: 175px;
+  }
+  
+  .flip-card-description {
+    font-size: 0.7rem;
+    line-height: 1.2;
+  }
+  
+  .person h5 {
+    font-size: 0.7rem;
+  }
+  
+  .person h3 {
+    font-size: 0.9rem;
+  }
+  
+  /* Further reduce margins and padding */
+  .wedding-party-div {
+    padding: 0 5px;
+  }
+  
+  .groom-side,
+  .bride-side {
+    margin: 0 2px;
+    padding: 0;
+  }
+  
+  h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+  }
+}

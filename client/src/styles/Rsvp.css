@@ -1,0 +1,230 @@
+/* Container for the invitation card */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+  }
+  
+  /* Outer white border with box shadow */
+  .outer-white-border {
+    background-color: white; /* White background for outermost layer */
+    padding: 40px;  /* Space between the outer white border and the black border */
+    border-radius: 20px; /* Optional: Rounded corners for the outer white border */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* Box shadow around the outer white border */
+  }
+  
+  /* White space between the outer white border and the black border */
+  .white-space-padding {
+    padding: 15px; /* Adjust this padding to control the space between the white border and black border */
+  }
+  
+  /* Inner wrapper for the black border */
+  .invitation-card-wrapper {
+    background-color: black; /* Black border */
+    padding: 5px; /* Space between the card and the black border */
+  }
+  
+  /* The actual invitation card with white background and shadow */
+  .invitation-card {
+    background-color: #fff;  /* White background for the invitation card */
+    padding: 40px;
+    width: 700px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow inside the white card */
+    font-family: 'Georgia', serif;
+  }
+  
+  /* All the content inside the invitation card (title, subtitle, details, etc.) */
+  .invitation-title,
+  .invitation-subtitle,
+  .invitation-details,
+  .invitation-location,
+  .invitation-footer {
+    text-align: center;
+    color: #4e4e4e;
+  }
+  
+  /* Main title styling */
+  .invitation-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  /* Subtitle */
+  .invitation-subtitle {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+  
+  /* Couple's name with a more stylized font */
+  .invitation-couple {
+    font-size: 36px;
+    font-weight: 700;
+    color: #b89e67;
+    margin: 20px 0;
+    font-family: 'Great Vibes', cursive;
+  }
+  
+  /* Details section */
+  .invitation-details {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  /* Location section */
+  .invitation-location {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+  
+  /* Footer section */
+  .invitation-footer {
+    font-size: 14px;
+    font-weight: 600;
+    color: #6c6c6c;
+    margin-top: 10px;
+  }
+  
+  /* Button styles */
+  .rsvp-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .btn {
+    font-size: 14px;
+    padding: 10px 20px;
+    font-weight: 500;
+    border-radius: 5px;
+  }
+  
+  /* Yes button - light gold color */
+  .btn-primary {
+    background-color: #b89e67;
+    border: none;
+    color: white;
+  }
+  
+  /* No button - red color */
+  .btn-danger {
+    background-color: #e53946;
+    border: none;
+    color: white;
+  }
+  
+  .btn:hover {
+    opacity: 0.9;
+  }
+  
+  /* Modal styles */
+  .modal-content {
+    border-radius: 8px;
+    font-family: 'Georgia', serif;
+  }
+  
+  .modal-header {
+    background-color: #f5f5f5;
+    border-bottom: 2px solid #dcdcdc;
+    text-align: center;
+  }
+  
+  .modal-header .modal-title {
+    color: #4e4e4e;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  
+  .modal-body {
+    font-size: 14px;
+    color: #4e4e4e;
+    padding: 20px;
+  }
+  
+  /* Form input styling */
+  .form-control {
+    border-radius: 5px;
+    border: 1px solid #dcdcdc;
+    font-size: 14px;
+  }
+  
+  .form-select {
+    border-radius: 5px;
+    border: 1px solid #dcdcdc;
+    font-size: 14px;
+    padding: 10px;
+  }
+  
+  .modal-footer {
+    text-align: center;
+  }
+  
+  .alert {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  /* Close button style */
+  .btn-close {
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    color: #b89e67;
+  }
+  
+  /* Mobile responsiveness */
+@media (max-width: 768px) {
+    .container {
+      padding: 20px;
+    }
+  
+    .outer-white-border {
+      padding: 20px;
+    }
+  
+    .invitation-card-wrapper {
+      padding: 5px;
+    }
+  
+    .invitation-card {
+      width: 100%;
+      padding: 20px;
+    }
+  
+    .rsvp-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .btn {
+      width: 100%;
+    }
+  
+    .invitation-title {
+      font-size: 16px;
+    }
+  
+    .invitation-subtitle {
+      font-size: 12px;
+    }
+  
+    .invitation-couple {
+      font-size: 28px;
+    }
+  
+    .invitation-details,
+    .invitation-location {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .invitation-couple {
+      font-size: 24px;
+    }
+  }
+  

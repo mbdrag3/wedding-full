@@ -1,0 +1,131 @@
+
+.title {
+    font-family: 'Parisienne', cursive;
+    font-size: 2rem;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sub-title {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 1rem;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.registry-container {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Carousel Styling */
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.carousel-track {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out;
+    flex-grow: 1;
+}
+
+.registry-item {
+    width: 250px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.registry-item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.registry-item h3 {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Carousel Buttons */
+.carousel-button {
+    background-color: #e4d96f;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.3s;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-button:hover {
+    background-color: black;
+}
+
+/* Button Styling */
+.registry-button-container {
+    margin-top: 20px;
+}
+
+.registry-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #e4d96f;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.registry-button:hover {
+    background-color: black;
+    color: #e4d96f;
+}
+
+/* 🔹 Keep arrows on the left & right side even on mobile */
+@media (max-width: 768px) {
+    .carousel {
+        display: flex;
+        flex-direction: row; /* Ensure row layout */
+        align-items: center;
+        justify-content: center;
+    }
+
+    .carousel-track {
+        display: flex;
+        justify-content: center;
+        width: 80%; /* Ensures it doesn't stretch too much */
+    }
+
+    .carousel-button {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+    }
+
+    .registry-item {
+        width: 80%;
+    }
+}
