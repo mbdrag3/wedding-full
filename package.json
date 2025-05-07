@@ -1,0 +1,12 @@
+{
+    "name": "wedding-backend-wrapper",
+    "private": true,
+    "version": "1.0.0",
+    "scripts": {
+      "start": "node server/server.js"
+    },
+    "engines": {
+      "node": "16.x"
+    }
+  }
+  
