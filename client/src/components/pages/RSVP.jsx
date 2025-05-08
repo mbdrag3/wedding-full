@@ -309,6 +309,7 @@ const RSVP = () => {
                             value={yesOption}
                             onChange={(e) => setYesOption(e.target.value)}
                           >
+                            <option value="">-- Select dinner choice --</option>
                             <option value="chicken">Coq Au Vin Chicken Breast</option>
                             <option value="beef">Char Crusted Fillet of Beef</option>
                           </select>
