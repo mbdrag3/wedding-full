@@ -43,7 +43,8 @@ const RSVP = () => {
       };
 
       try {
-        const response = await fetch('http://localhost:5000/rsvp', {
+        const api = import.meta.env.VITE_API_URL
+        const response = await fetch(`${api}/rsvp`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(rsvpData),
@@ -91,7 +92,8 @@ const RSVP = () => {
       };
 
       try {
-        const response = await fetch('http://localhost:5000/rsvp', {
+        const api = import.meta.env.VITE_API_URL
+        const response = await fetch(`${api}/rsvp`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(rsvpData),
