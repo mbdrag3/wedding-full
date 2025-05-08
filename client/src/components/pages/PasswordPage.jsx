@@ -10,10 +10,12 @@ const PasswordPage = () => {
   const [attempts, setAttempts] = useState(0);
   const navigate = useNavigate();
 
+  const api = process.env.REACT_APP_API_URL;
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/login', {
+      const response = await fetch(`${api}/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ password }),
