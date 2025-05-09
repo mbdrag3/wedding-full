@@ -44,8 +44,8 @@ import heicConvert from 'heic-convert';
 
 (async () => {
   const cwd        = process.cwd();
-  const INPUT_DIR  = path.join(cwd, 'src/assets/yai-wedding');
-  const OUTPUT_DIR = path.join(cwd, 'src/assets/optimized-yai-wedding');
+  const INPUT_DIR  = path.join(cwd, 'src/assets/more-photos');
+  const OUTPUT_DIR = path.join(cwd, 'src/assets/optimized-more-photos');
 
   console.log('🔍 Scanning:', INPUT_DIR);
   try {

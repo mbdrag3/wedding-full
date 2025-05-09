@@ -9,7 +9,7 @@ const Faq = () => {
   const faqs = [
     {
       question: "When and where is the wedding??",
-      answer: "Our wedding will take place on Saturday, July 12, 2025. The ceremony will be held at Coral Gables Congregational Church at 4:00 PM, followed by a reception at The Biltmore Hotel Miami Coral Gables, starting at 6:00 PM."
+      answer: "Our wedding will take place on Saturday, July 12, 2025. The ceremony will be held at Coral Gables Congregational Church at 4:00 PM, followed by a reception at The Biltmore Hotel Miami Coral Gables, starting at 5:00 PM."
     },
     {
       question: "What is the dress code?",
@@ -21,7 +21,7 @@ const Faq = () => {
     },
     {
       question: "Is there a hotel block for guests?",
-      answer: (
+      answer: 
         <>
           Yes! We have reserved a room block at The Biltmore Hotel Miami Coral Gables. Please book your stay early to secure the best rate by clicking{' '}
           <a
@@ -33,12 +33,21 @@ const Faq = () => {
           </a>
           . -- Group Code # 11633 or call: 855-311-6903.
         </>
-      )
+      
     }
     ,
     {
       question: "How do I get to the venues?",
-      answer: "Ceremony: Coral Gables Congregational Church is located at 3010 De Soto Blvd, Coral Gables, FL 33134. There is parking available on-site. Reception: The Biltmore Hotel is a short drive from the church. Valet and self-parking options are available."
+      answer: 
+        <>
+          Ceremony: Coral Gables Congregational Church is located at <a
+                  href="https://www.google.com/maps?q=3010+De+Soto+Boulevard,+Coral+Gables,+FL+33134"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  3010 De Soto Boulevard, Coral Gables, FL 33134
+                </a>. There is parking available on-site. Reception: The Biltmore Hotel is a short drive from the church. Valet and self-parking options are available.
+        </>
     },
     {
       question: "What kind of food will be served?",

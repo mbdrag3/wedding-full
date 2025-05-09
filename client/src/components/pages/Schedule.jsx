@@ -1,7 +1,7 @@
 import "../../styles/Schedule.css";
 import churchIMG from "../../assets/church.jpg";
 import biltmoreIMG from "../../assets/biltmore.jpg";
-import carIMG from "../../assets/car-driving-away.jpg";
+import casinoIMG from "../../assets/optimized-more-photos/7246-75.JPEG";
 
 const Schedule = () => {
     return (
@@ -33,7 +33,7 @@ const Schedule = () => {
                                 <img src={biltmoreIMG} alt="Biltmore Hotel" className="fixed-img" />
                             </div>
                             <div className="event-content content-aside-2">
-                                <h2>6:00 PM - 11:00 PM</h2>
+                                <h2>5:00 PM - 11:00 PM</h2>
                                 <h3>Cocktail Hour + Reception</h3>
                                 <p>Party time</p>
                             </div>
@@ -53,7 +53,7 @@ const Schedule = () => {
                                 <p>Thanks for coming. Go home.</p>
                             </div>
                             <div className="event-image">
-                                <img src={carIMG} alt="Car Driving Away" className="fixed-img" />
+                                <img src={casinoIMG} alt="Car Driving Away" className="fixed-img" />
                             </div>
                         </div>
                     </div>
