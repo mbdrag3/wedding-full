@@ -172,6 +172,41 @@
 }
 
 /* Media queries for responsive design */
+
+/* This media query targets screens larger than 1200px wide */
+@media (min-width: 1200px) {
+  /* Increase the size of the flip card container for larger screens */
+  .flip-card {
+    width: 250px; /* Increased from 180px for better visibility on large screens */
+    height: 435px; /* Maintained aspect ratio with the width */
+    margin: 15px; /* Added more space between cards */
+  }
+  
+  /* Update all image sizes to match the new container size */
+  .flip-card-front img,
+  .flip-card-back-img,
+  .flip-card-back img {
+    width: 250px; /* Match the container width */
+    height: 435px; /* Match the container height */
+  }
+  
+  /* Increase the size of the description text for better readability */
+  .flip-card-description {
+    font-size: 1.2rem; /* Larger font size for the description */
+    padding: 15px; /* More padding around the text */
+  }
+  
+  /* Increase the size of the role text (e.g., "Best Man", "Maid of Honor") */
+  .person h5 {
+    font-size: 1.2rem; /* Larger font size for roles */
+  }
+  
+  /* Increase the size of the name text */
+  .person h3 {
+    font-size: 1.5rem; /* Larger font size for names */
+  }
+}
+
 @media (max-width: 768px) {
   .title {
     font-size: 2.5rem; /* Smaller title on mobile */
