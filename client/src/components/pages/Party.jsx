@@ -42,6 +42,15 @@ const WeddingParty = () => {
     },
     {
       role: "Groomsman",
+      img: alecIMG,
+      name: "Alec French",
+      description:
+      {
+        intro: "Most athletic PO of all time.. Needs some golfing lessons."
+      }
+    },
+    {
+      role: "Groomsman",
       img: dylanIMG,
       name: "Dylan Arnett",
       description:
@@ -56,14 +65,6 @@ const WeddingParty = () => {
       description:
       {
         intro: "Most likely to be watching a bet unfold at our wedding. O/U on the first kiss?"
-      }
-    },{
-      role: "Groomsman",
-      img: alecIMG,
-      name: "Alec French",
-      description:
-      {
-        intro: "Most athletic PO of all time.. Needs some golfing lessons."
       }
     },
     {

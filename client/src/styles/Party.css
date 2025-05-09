@@ -192,7 +192,7 @@
   
   /* Increase the size of the description text for better readability */
   .flip-card-description {
-    font-size: 1.2rem; /* Larger font size for the description */
+    font-size: 1.45rem; /* Larger font size for the description */
     padding: 15px; /* More padding around the text */
   }
   
