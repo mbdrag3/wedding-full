@@ -6,6 +6,7 @@ export default function ScrollToTop() {
   const { pathname } = useLocation();
 
   useLayoutEffect(() => {
+    console.log('[ScrollToTop] pathname changed →', pathname);   // ← log
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, [pathname]);
 
