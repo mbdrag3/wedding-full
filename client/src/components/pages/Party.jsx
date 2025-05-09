@@ -64,7 +64,7 @@ const WeddingParty = () => {
       name: "Henry Colombi",
       description:
       {
-        intro: "Most likely to be watching a bet unfold at our wedding. O/U on the first kiss?"
+        intro: "Most likely to be watching a bet unfold at our wedding. O/U 5 sec on the first kiss?"
       }
     },
     {
@@ -150,7 +150,7 @@ const WeddingParty = () => {
       name: "Raysa Lizardo",
       description: 
       { 
-        intro: "My bestie for the restie.", 
+        intro: "My bestie for the restie. 💕", 
          
       } 
     },
@@ -257,7 +257,6 @@ const WeddingParty = () => {
       </div>
 
       {/* Flower divider */}
-      
       <div style={{ textAlign: "center" }}>
         <img src={flowerDivider} alt="Cute Floral Page Divider" style={{ width: "100%", height: "auto" }} />
       </div>
@@ -305,7 +304,6 @@ const WeddingParty = () => {
       </div>
 
       {/* Flower divider */}
-
       <div style={{ textAlign: "center" }}>
         <img src={flowerDivider} alt="Cute Floral Page Divider" style={{ width: "100%", height: "auto" }} />
       </div>

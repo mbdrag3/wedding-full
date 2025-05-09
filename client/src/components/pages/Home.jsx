@@ -39,7 +39,19 @@ const Home = () => {
           alt="Cute Floral Page Divider"
           className="flower-divider"
         />
-  </div>
+      </div>
+      
+      {/* Welcome Section */}
+      <div className="welcome-section">
+        <h2>Welcome to Our Wedding Website</h2>
+        <p>
+          We are so excited to share our special day with you! This website is your one-stop destination for all the details about our wedding celebration. 
+          From our story and wedding party to venue information and registry details, you'll find everything you need to know right here.
+        </p>
+        <p>
+          Thank you for being a part of our journey. We can't wait to celebrate this beautiful moment with our loved ones!
+        </p>
+      </div>
 
     </div>
   );
