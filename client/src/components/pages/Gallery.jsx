@@ -109,6 +109,19 @@ import IMG98 from '../../assets/optimized-yai-wedding/IMG_2897.jpg';
 import IMG99 from '../../assets/optimized-yai-wedding/IMG_4356.jpg';
 import IMG100 from '../../assets/optimized-yai-wedding/IMG_5278.jpg';
 import IMG101 from '../../assets/optimized-yai-wedding/IMG_5434.JPG';
+import IMG102 from '../../assets/optimized-more-photos/IMG_0484.jpg';
+import IMG103 from '../../assets/optimized-more-photos/IMG_1720.JPG';
+import IMG104 from '../../assets/optimized-more-photos/IMG_1721.JPG';
+import IMG105 from '../../assets/optimized-more-photos/IMG_1722.JPG';
+import IMG106 from '../../assets/optimized-more-photos/IMG_1723.JPG';
+import IMG107 from '../../assets/optimized-more-photos/IMG_1786.jpg';
+import IMG108 from '../../assets/optimized-more-photos/IMG_3018.JPG';
+import IMG109 from '../../assets/optimized-more-photos/IMG_6457.jpg';
+import IMG110 from '../../assets/optimized-more-photos/IMG_8698.jpg';
+import IMG111 from '../../assets/optimized-more-photos/IMG_8864.jpg';
+import IMG112 from '../../assets/optimized-more-photos/IMG_8910.jpg';
+import IMG113 from '../../assets/optimized-more-photos/IMG_9618.jpg';
+import IMG114 from '../../assets/optimized-more-photos/IMG_9980.JPG';
 
 
 const images = [
@@ -211,7 +224,21 @@ const images = [
   { src: IMG98 },
   { src: IMG99 },
   { src: IMG100 },
-  { src: IMG101 }
+  { src: IMG101 },
+  { src: IMG102 },
+  { src: IMG103 },
+  { src: IMG104 },
+  { src: IMG105 },
+  { src: IMG106 },
+  { src: IMG107 },
+  { src: IMG108 },
+  { src: IMG109 },
+  { src: IMG110 },
+  { src: IMG111 },
+  { src: IMG112 },
+  { src: IMG113 },
+  { src: IMG114 },
+
 ];
 
 // Shuffle the images array for randomization
