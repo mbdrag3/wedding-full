@@ -3,6 +3,7 @@ import React from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
+import ScrollToTop from './components/ScrollToTop';
 import './App.css';
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
       flexDirection: 'column',
       minHeight: '100vh' // Ensure the app takes the full viewport height
     }}>
+      <ScrollToTop />
       <Navbar />
       <main style={{ flex: '1 0 auto' }}> {/* This makes main content expand to fill available space */}
         <Outlet />
