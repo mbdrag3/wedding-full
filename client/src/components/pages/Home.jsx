@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import engagement1 from '../../assets/engagement-1.jpg';
 import engagement2 from '../../assets/engagement-2.jpg';
 import engagement3 from '../../assets/engagement-3.jpg';
@@ -8,31 +8,67 @@ import flowerDivider from '../../assets/flower-divider.svg'
 
 const Home = () => {
   const images = [engagement1, engagement2, engagement3, engagement4];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+      }, 3000); // Change image every 3 seconds
+
+      return () => clearInterval(interval);
+    }
+  }, [isMobile, images.length]);
 
   return (
     <div className='home-page-container'>
-      <div className="marquee-container">
-        <div className="marquee-track">
-          {/* Map through the images twice to create a seamless loop */}
+      {isMobile ? (
+        // Mobile view - Fade transition
+        <div className="mobile-image-container">
           {images.map((image, index) => (
             <img
-              key={`original-${index}`}
+              key={index}
               src={image}
               alt={`Engagement ${index + 1}`}
-              className="marquee-image"
-            />
-          ))}
-          {images.map((image, index) => (
-            <img
-              key={`duplicate-${index}`}
-              src={image}
-              alt={`Engagement duplicate ${index + 1}`}
-              className="marquee-image"
+              className={`mobile-image ${index === currentImageIndex ? 'active' : ''}`}
             />
           ))}
         </div>
-      </div>
-        {/* Floral divider */}
+      ) : (
+        // Desktop view - Marquee
+        <div className="marquee-container">
+          <div className="marquee-track">
+            {images.map((image, index) => (
+              <img
+                key={`original-${index}`}
+                src={image}
+                alt={`Engagement ${index + 1}`}
+                className="marquee-image"
+              />
+            ))}
+            {images.map((image, index) => (
+              <img
+                key={`duplicate-${index}`}
+                src={image}
+                alt={`Engagement duplicate ${index + 1}`}
+                className="marquee-image"
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Floral divider */}
       <div className="divider-container">
         <img
           src={flowerDivider}
