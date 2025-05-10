@@ -18,7 +18,9 @@ html, body {
 
 .marquee-track {
   display: inline-flex;
-  animation: scroll-marquee 40s linear infinite;
+  animation: scroll-marquee 20s linear infinite;
+  will-change: transform; /* Optimize animation performance */
+  transform: translateZ(0); /* Force GPU acceleration */
 }
 
 .marquee-image {
@@ -27,6 +29,8 @@ html, body {
   flex-shrink: 0;     /* keep them from shrinking narrower than their intrinsic aspect ratio */
   margin-right: 20px; 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateZ(0); /* Force GPU acceleration */
+  backface-visibility: hidden; /* Reduce rendering issues */
 }
 
 /* Center the flower divider and prevent it from getting too big */
@@ -93,9 +97,24 @@ html, body {
 
 /* MEDIA QUERY FOR SMALLER SCREENS */
 @media screen and (max-width: 768px) {
+  .marquee-track {
+    animation: scroll-marquee 15s linear infinite; /* Faster animation on mobile */
+  }
+
   .marquee-image {
-    max-width: 250px; /* or maybe 80% if you want them fluid */
+    max-width: 250px;
     height: auto;
     margin-right: 10px;
+  }
+}
+
+/* For very small screens */
+@media screen and (max-width: 480px) {
+  .marquee-track {
+    animation: scroll-marquee 12s linear infinite; /* Even faster on very small screens */
+  }
+  
+  .marquee-image {
+    max-width: 200px; /* Smaller images for very small screens */
   }
 }
