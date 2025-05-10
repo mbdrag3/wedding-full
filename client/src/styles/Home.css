@@ -14,23 +14,32 @@ html, body {
   position: relative;
   padding: 10px 0;
   white-space: nowrap;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 .marquee-track {
   display: inline-flex;
   animation: scroll-marquee 20s linear infinite;
-  will-change: transform; /* Optimize animation performance */
-  transform: translateZ(0); /* Force GPU acceleration */
+  will-change: transform;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0); /* Safari support */
+  -webkit-backface-visibility: hidden; /* Safari support */
+  backface-visibility: hidden;
+  perspective: 1000; /* Hardware acceleration */
 }
 
 .marquee-image {
-  max-width: 500px;    /* Let images shrink proportionally */
-  height: auto;       /* remove the forced fixed height */
-  flex-shrink: 0;     /* keep them from shrinking narrower than their intrinsic aspect ratio */
-  margin-right: 20px; 
+  max-width: 500px;
+  height: auto;
+  flex-shrink: 0;
+  margin-right: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transform: translateZ(0); /* Force GPU acceleration */
-  backface-visibility: hidden; /* Reduce rendering issues */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  image-rendering: -webkit-optimize-contrast; /* Sharper images on webkit */
+  image-rendering: crisp-edges;
 }
 
 /* Center the flower divider and prevent it from getting too big */
@@ -87,34 +96,34 @@ html, body {
 }
 
 @keyframes scroll-marquee {
-  from {
-    transform: translateX(0);
+  0% {
+    transform: translateX(0) translateZ(0);
   }
-  to {
-    transform: translateX(-50%);
+  100% {
+    transform: translateX(-50%) translateZ(0);
   }
 }
 
 /* MEDIA QUERY FOR SMALLER SCREENS */
 @media screen and (max-width: 768px) {
   .marquee-track {
-    animation: scroll-marquee 15s linear infinite; /* Faster animation on mobile */
+    animation: scroll-marquee 8s linear infinite; /* Much faster on mobile */
   }
 
   .marquee-image {
-    max-width: 250px;
-    height: auto;
-    margin-right: 10px;
+    max-width: 200px; /* Smaller images for better performance */
+    margin-right: 8px; /* Reduced spacing */
   }
 }
 
 /* For very small screens */
 @media screen and (max-width: 480px) {
   .marquee-track {
-    animation: scroll-marquee 12s linear infinite; /* Even faster on very small screens */
+    animation: scroll-marquee 6s linear infinite; /* Even faster on very small screens */
   }
   
   .marquee-image {
-    max-width: 200px; /* Smaller images for very small screens */
+    max-width: 150px; /* Even smaller images for very small screens */
+    margin-right: 6px;
   }
 }
