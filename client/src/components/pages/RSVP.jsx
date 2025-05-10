@@ -167,7 +167,7 @@ const RSVP = () => {
                 </a>
               </p>
               <div className="invitation-footer">
-                <p>Valet Parking | Black Tie Welcome</p>
+                <p>Black Tie</p>
               </div>
 
               {/* RSVP buttons */}
