@@ -14,7 +14,7 @@ const Schedule = () => {
                             <div className="event-content content-aside-1">
                                 <h2>4:00 PM - 5:00 PM</h2>
                                 <h3>Church Ceremony</h3>
-                                <p>Watch them tie the knot</p>
+                                <p>Watch them tie the knot!</p>
                             </div>
                             <div className="event-image">
                                 <img src={churchIMG} alt="Church" className="fixed-img" />
@@ -35,7 +35,7 @@ const Schedule = () => {
                             <div className="event-content content-aside-2">
                                 <h2>5:00 PM - 11:00 PM</h2>
                                 <h3>Cocktail Hour + Reception</h3>
-                                <p>Party time</p>
+                                <p>Party time!</p>
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,7 @@ const Schedule = () => {
                             <div className="event-content content-aside-1">
                                 <h2>11:01 PM</h2>
                                 <h3>Get Home Safely!!</h3>
-                                <p>Thanks for coming. Go home.</p>
+                                <p>Thanks for coming. We hope you get lucky tonight!</p>
                             </div>
                             <div className="event-image">
                                 <img src={casinoIMG} alt="Car Driving Away" className="fixed-img" />
