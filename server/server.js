@@ -43,15 +43,19 @@ if (DATABASE_URL) {
 app.post('/rsvp', async (req, res) => {
   if (!pool) return res.status(503).send('Database not configured');
 
-  const { firstName, lastName, response, foodOption, allergyInfo } = req.body;
+  const { firstName, lastName, response, foodOption, allergyInfo, guestFoodOptions = [] } = req.body;
+
+  const guest2 = guestFoodOptions[0] || null;
+  const guest3 = guestFoodOptions[1] || null;
+  const guest4 = guestFoodOptions[2] || null;
 
   try {
     const result = await pool.query(
       `INSERT INTO rsvp
-         (full_name, guest, response, food_option, allergy_info)
-       VALUES ($1, $2, $3, $4, $5)
+         (full_name, guest, response, food_option, allergy_info, guest_food_option_2, guest_food_option_3, guest_food_option_4)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
        RETURNING *`,
-      [firstName, lastName, response, foodOption, allergyInfo]
+      [firstName, lastName, response, foodOption, allergyInfo, guest2, guest3, guest4]
     );
     res.json(result.rows[0]);
   } catch (err) {
