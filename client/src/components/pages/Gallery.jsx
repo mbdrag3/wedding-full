@@ -122,6 +122,16 @@ import IMG111 from '../../assets/optimized-more-photos/IMG_8864.jpg';
 import IMG112 from '../../assets/optimized-more-photos/IMG_8910.jpg';
 import IMG113 from '../../assets/optimized-more-photos/IMG_9618.jpg';
 import IMG114 from '../../assets/optimized-more-photos/IMG_9980.JPG';
+import IMG115 from '../../assets/optimized-photos-05-12/1st-cruise.jpg';
+import IMG116 from '../../assets/optimized-photos-05-12/acosta-wedding.jpg';
+import IMG117 from '../../assets/optimized-photos-05-12/fernandez-fam.jpg';
+import IMG118 from '../../assets/optimized-photos-05-12/fernandez-fam-2.jpg';
+import IMG119 from '../../assets/optimized-photos-05-12/fernandez-fam-3.jpg';
+import IMG120 from '../../assets/optimized-photos-05-12/IMG_6110.jpg';
+import IMG121 from '../../assets/optimized-photos-05-12/IMG_6110.jpg';
+import IMG122 from '../../assets/optimized-photos-05-12/kids-ollie.jpg';
+import IMG123 from '../../assets/optimized-photos-05-12/acosta-fam.jpg';
+import IMG124 from '../../assets/optimized-photos-05-12/acosta-fam-2.jpg';
 
 
 const images = [
@@ -238,7 +248,16 @@ const images = [
   { src: IMG112 },
   { src: IMG113 },
   { src: IMG114 },
-
+  { src: IMG115},
+  { src: IMG116},
+  { src: IMG117},
+  { src: IMG118},
+  { src: IMG119},
+  { src: IMG120},
+  { src: IMG121},
+  { src: IMG122},
+  { src: IMG123},
+  { src: IMG124}
 ];
 
 // Shuffle the images array for randomization
