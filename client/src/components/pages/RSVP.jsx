@@ -60,11 +60,15 @@ const RSVP = () => {
         setGuestOptions([]);
         setYesAllergy('');
 
+        console.log('✅ Submitting GA event for RSVP');
         if (window.gtag) {
           window.gtag('event', 'rsvp_submit', {
             event_category: 'RSVP',
             event_label: 'Yes RSVP',
-            value: 1
+            value: 1,
+            event_callback: () => {
+              console.log('✅ GA4 event delivered');
+            }
           });
         }
 
@@ -108,11 +112,15 @@ const RSVP = () => {
         setNoFirstName('');
         setNoLastName('');
 
+        console.log('✅ Submitting GA event for RSVP');
         if (window.gtag) {
           window.gtag('event', 'rsvp_submit', {
             event_category: 'RSVP',
             event_label: 'No RSVP',
-            value: 0
+            value: 0,
+            event_callback: () => {
+              console.log('✅ GA4 event delivered');
+            }
           });
         }
         
