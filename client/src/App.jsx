@@ -4,11 +4,13 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
 import ScrollToTop from './components/ScrollToTop';
+import usePageAnalytics from './hooks/usePageAnalytics';
 import './App.css';
 
 const App = () => {
   const { pathname } = useLocation();
-  console.log('🚪 <App> rendered at', pathname);
+  usePageAnalytics();
+  console.log('<App> rendered at', pathname);
   
   return (
     <div className="app-container" style={{ 

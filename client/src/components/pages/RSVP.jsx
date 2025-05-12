@@ -59,12 +59,22 @@ const RSVP = () => {
         setYesOption('');
         setGuestOptions([]);
         setYesAllergy('');
+
+        if (window.gtag) {
+          window.gtag('event', 'rsvp_submit', {
+            event_category: 'RSVP',
+            event_label: 'Yes RSVP',
+            value: 1
+          });
+        }
+
       } else {
         console.error('Failed to submit RSVP');
       }
     } catch (err) {
       console.error('Error:', err);
     }
+    
   };
 
   /* ───────── NO submit ───────────────────────────────────────────────── */
@@ -97,6 +107,15 @@ const RSVP = () => {
         modal?.hide();
         setNoFirstName('');
         setNoLastName('');
+
+        if (window.gtag) {
+          window.gtag('event', 'rsvp_submit', {
+            event_category: 'RSVP',
+            event_label: 'No RSVP',
+            value: 0
+          });
+        }
+        
       } else {
         console.error('Failed to submit RSVP (No)');
       }
