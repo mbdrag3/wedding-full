@@ -50,7 +50,7 @@ const Schedule = () => {
                             <div className="event-content content-aside-1">
                                 <h2>11:01 PM</h2>
                                 <h3>Get Home Safely!!</h3>
-                                <p>Thanks for coming. We hope you get lucky tonight!</p>
+                                <p>Thanks for coming. Get home safely! Thank you for sharing our special day. We love our friends and family.</p>
                             </div>
                             <div className="event-image">
                                 <img src={casinoIMG} alt="Car Driving Away" className="fixed-img" />
