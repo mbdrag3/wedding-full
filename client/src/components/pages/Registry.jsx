@@ -201,6 +201,7 @@ const Registry = () => {
         <div className="registry-container">
             <h1 className="title">Our Wedding Registry</h1>
             <p className="sub-title">We’re so excited to start our wedding registry, and we’ve chosen to do it at Macy’s! With their wide selection of home essentials, stylish décor, and kitchen must-haves, we know we’ll find everything we need to start our new life together. We can’t wait to celebrate with our loved ones and share this special journey! </p>
+            <p><strong>For those who wish to contribute in a more personal way, we would be truly grateful for gifts toward our future home fund.</strong></p>
 
             {/* Carousel Wrapper */}
             <div className="carousel">
