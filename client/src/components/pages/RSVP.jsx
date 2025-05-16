@@ -439,7 +439,7 @@ const RSVP = () => {
                       />
                     </div>
                     <div className="modal-body text-center">
-                      <p>We’ve recorded your response and can’t wait to celebrate with you.</p>
+                      <p>We’ve recorded your response! Thank you!</p>
                     </div>
                     <div className="modal-footer">
                       <button
