@@ -5,20 +5,21 @@ import * as bootstrap from 'bootstrap/dist/js/bootstrap.bundle.min.js';
 const RSVP = () => {
   /* ───────── YES modal state ─────────────────────────────────────────── */
   const [yesFirstName, setYesFirstName] = useState('');
-  const [yesLastName,  setYesLastName]  = useState('');
-  const [yesOption,    setYesOption]    = useState('');
+  const [yesLastName, setYesLastName] = useState('');
+  const [yesOption, setYesOption] = useState('');
   const [guestOptions, setGuestOptions] = useState([]);   // holds up to 3 extra guests
-  const [yesAllergy,   setYesAllergy]   = useState('');
-  const [yesError,     setYesError]     = useState('');
+  const [yesAllergy, setYesAllergy] = useState('');
+  const [yesError, setYesError] = useState('');
 
   /* ───────── NO modal state ──────────────────────────────────────────── */
-  const [noFirstName,  setNoFirstName]  = useState('');
-  const [noLastName,   setNoLastName]   = useState('');
-  const [noError,      setNoError]      = useState('');
+  const [noFirstName, setNoFirstName] = useState('');
+  const [noLastName, setNoLastName] = useState('');
+  const [noError, setNoError] = useState('');
 
   /* ───────── Modal refs ──────────────────────────────────────────────── */
   const yesModalRef = useRef(null);
-  const noModalRef  = useRef(null);
+  const noModalRef = useRef(null);
+  const successModalRef = useRef(null);
 
   /* ───────── Helper to add another guest option ─────────────────────── */
   const addGuestOption = () => {
@@ -35,20 +36,20 @@ const RSVP = () => {
     setYesError('');
 
     const rsvpData = {
-      firstName:        yesFirstName,
-      lastName:         yesLastName,     // optional
-      response:         'yes',
-      foodOption:       yesOption,
-      allergyInfo:      yesAllergy,
+      firstName: yesFirstName,
+      lastName: yesLastName,     // optional
+      response: 'yes',
+      foodOption: yesOption,
+      allergyInfo: yesAllergy,
       guestFoodOptions: guestOptions     // extra dinner choices
     };
 
     try {
       const api = import.meta.env.VITE_API_URL;
       const res = await fetch(`${api}/rsvp`, {
-        method:  'POST',
+        method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify(rsvpData)
+        body: JSON.stringify(rsvpData)
       });
 
       if (res.ok) {
@@ -72,13 +73,15 @@ const RSVP = () => {
           });
         }
 
+        new bootstrap.Modal(successModalRef.current).show();
+
       } else {
         console.error('Failed to submit RSVP');
       }
     } catch (err) {
       console.error('Error:', err);
     }
-    
+
   };
 
   /* ───────── NO submit ───────────────────────────────────────────────── */
@@ -92,8 +95,8 @@ const RSVP = () => {
 
     const rsvpData = {
       firstName: noFirstName,
-      lastName:  noLastName,
-      response:  'no',
+      lastName: noLastName,
+      response: 'no',
       foodOption: '',
       allergyInfo: ''
     };
@@ -101,9 +104,9 @@ const RSVP = () => {
     try {
       const api = import.meta.env.VITE_API_URL;
       const res = await fetch(`${api}/rsvp`, {
-        method:  'POST',
+        method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify(rsvpData)
+        body: JSON.stringify(rsvpData)
       });
 
       if (res.ok) {
@@ -123,7 +126,9 @@ const RSVP = () => {
             }
           });
         }
-        
+
+        new bootstrap.Modal(successModalRef.current).show();
+
       } else {
         console.error('Failed to submit RSVP (No)');
       }
@@ -135,16 +140,16 @@ const RSVP = () => {
   /* ───────── modal hidden cleanup ────────────────────────────────────── */
   useEffect(() => {
     const yesEl = yesModalRef.current;
-    const noEl  = noModalRef.current;
+    const noEl = noModalRef.current;
     const clearYes = () => setYesError('');
-    const clearNo  = () => setNoError('');
+    const clearNo = () => setNoError('');
 
     yesEl?.addEventListener('hidden.bs.modal', clearYes);
-    noEl ?.addEventListener('hidden.bs.modal', clearNo);
+    noEl?.addEventListener('hidden.bs.modal', clearNo);
 
     return () => {
       yesEl?.removeEventListener('hidden.bs.modal', clearYes);
-      noEl ?.removeEventListener('hidden.bs.modal', clearNo);
+      noEl?.removeEventListener('hidden.bs.modal', clearNo);
     };
   }, []);
 
@@ -410,6 +415,45 @@ const RSVP = () => {
                   </div>
                 </div>
               </div>
+
+              {/* SUCCESS Modal — shows after any successful RSVP */}          {/* NEW */}
+              <div
+                className="modal fade"
+                id="successModal"
+                tabIndex="-1"
+                aria-labelledby="successModalLabel"
+                aria-hidden="true"
+                ref={successModalRef}
+              >
+                <div className="modal-dialog modal-dialog-centered">
+                  <div className="modal-content">
+                    <div className="modal-header">
+                      <h5 className="modal-title" id="successModalLabel">
+                        RSVP Received — Thank You!
+                      </h5>
+                      <button
+                        type="button"
+                        className="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      />
+                    </div>
+                    <div className="modal-body text-center">
+                      <p>We’ve recorded your response and can’t wait to celebrate with you.</p>
+                    </div>
+                    <div className="modal-footer">
+                      <button
+                        type="button"
+                        className="btn btn-primary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
 
             </div>{/* .invitation-card */}
           </div>
