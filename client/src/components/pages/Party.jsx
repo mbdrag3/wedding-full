@@ -19,6 +19,7 @@ import alecIMG from "../../assets/groomsmen/alec.JPG";
 import henryIMG from "../../assets/groomsmen/henry.png"
 import dylanIMG from "../../assets/groomsmen/dylan.JPG"
 import flowerDivider from '../../assets/flower-divider.svg';
+import matthewIMG from '../../assets/matthew-2.jpg';
 
 const WeddingParty = () => {
   const groomsSide = [
@@ -196,6 +197,18 @@ const WeddingParty = () => {
     }
   ];
 
+  const ringBearer = [
+    { 
+      role: "Ring Bearer", 
+      img: matthewIMG, 
+      name: "Matthew Llana", 
+      description:
+      {
+        intro: ""
+      }
+    },
+  ]
+
   return (
     <div className="wedding-party-div">
       <h1 className="title">Wedding Party</h1>
@@ -306,6 +319,48 @@ const WeddingParty = () => {
       {/* Flower divider */}
       <div style={{ textAlign: "center" }}>
         <img src={flowerDivider} alt="Cute Floral Page Divider" style={{ width: "100%", height: "auto" }} />
+      </div>
+
+      {/* Ring Bearer Section */}
+      <div className="flower-girls-div">
+        <h1 className="title">Ring Bearer</h1>
+        <div className="flower-girls-container">
+          {ringBearer.map((ring, index) => (
+            <div key={index} className="person">
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  {/* Front side (image) */}
+                  <div className="flip-card-front">
+                    <img
+                      src={ring.img}
+                      alt={ring.name}
+                      className="wedding-party-img"
+                    />
+                  </div>
+                  {/* Back side (description inside image) */}
+                  <div className="flip-card-back">
+                    <div className="flip-card-back-img">
+                      <img
+                        src={ring.img}
+                        alt={ring.name}
+                        className="wedding-party-img"
+                      />
+                    </div>
+                    <div className="flip-card-description">
+                    <p>
+                        {ring.description.intro}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Static name and role */}
+              <h5>{ring.role}</h5>
+              <h3>{ring.name}</h3>
+            </div>
+          ))}
+        </div>
       </div>
 
     </div>
