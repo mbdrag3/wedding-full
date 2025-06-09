@@ -204,7 +204,7 @@ const WeddingParty = () => {
       name: "Matthew Llana", 
       description:
       {
-        intro: ""
+        intro: "The sweetest little bear. 🧸"
       }
     },
   ]
