@@ -199,7 +199,7 @@ const RSVP = () => {
                 </a>
               </p>
               <div className="invitation-footer">
-                <p>Black Tie</p>
+                <p>Black Tie | Black Attire</p>
               </div>
 
               {/* RSVP buttons */}
