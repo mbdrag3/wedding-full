@@ -202,8 +202,8 @@ const RSVP = () => {
                 <p>Black Tie | Black Attire</p>
               </div>
 
-              {/* RSVP buttons */}
-              <div className="rsvp-buttons">
+              {/* RSVP buttons ... REMOVED ON 6/25 */}
+              {/* <div className="rsvp-buttons">
                 <button
                   type="button"
                   className="btn btn-primary me-3"
@@ -220,7 +220,7 @@ const RSVP = () => {
                 >
                   RSVP No
                 </button>
-              </div>
+              </div> */}
 
               {/* YES Modal */}
               <div

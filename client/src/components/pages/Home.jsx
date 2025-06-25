@@ -73,7 +73,7 @@ const Home = () => {
               cursor: 'pointer'
             }}>&times;</button>
             <h3>NOTICE</h3>
-            <p>Please RSVP as soon as possible. We will be closing the list soon in order to get an accurate count.</p>
+            <p>RSVP is now closed.</p>
           </div>
         </div>
       )}
